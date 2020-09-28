@@ -190,6 +190,8 @@ local function Path(self, ...)
 end
 
 local function ForceUpdate(element, event, ...)
+	-- UpdateAllElements passes the frame instead of the element
+	element = element.Runes or element
 	Path(element.__owner, event or 'ForceUpdate', ...)
 	ColorPath(element.__owner, event or 'ForceUpdate', ...)
 end
